@@ -224,7 +224,7 @@ class FlutterPolls extends HookWidget {
                   duration: const Duration(milliseconds: 300),
                   child: userHasVoted.value || hasPollEnded.value
                       ? Container(
-                          key: UniqueKey(),
+                          key: ValueKey('$pollId/${pollOption.id}'),
                           margin: EdgeInsets.only(
                             bottom: heightBetweenOptions ?? 8,
                           ),
@@ -277,7 +277,7 @@ class FlutterPolls extends HookWidget {
                           ),
                         )
                       : Container(
-                          key: UniqueKey(),
+                          key: ValueKey('$pollId/${pollOption.id}'),
                           margin: EdgeInsets.only(
                             bottom: heightBetweenOptions ?? 8,
                           ),
